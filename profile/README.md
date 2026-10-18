@@ -129,10 +129,10 @@ somebody else picked.
 
 | package | what it is |
 |---|---|
-| [`@privatekey/keys`](https://github.com/getprivatekey/keys) | key material — generate, derive, convert, verify. Five key types, **zero dependencies** |
-| [`@privatekey/core`](https://github.com/getprivatekey/core) | the ports — `IKeyStore` and `ISigner`. Types only: zero runtime, zero dependencies |
-| [`@privatekey/keystore-node`](https://github.com/getprivatekey/keystore-node) | a keystore on `node:fs` — one file per key, `0600`, a `0700` directory when the store makes it |
-| [`@privatekey/keystore-hsfs`](https://github.com/getprivatekey/keystore-hsfs) | a keystore over any `IFileSystem` — the same file, behind [High Security File System](https://github.com/high-security) |
+| [`@privatekey/keys`](https://github.com/getprivatekey/packages/tree/main/keys) | key material — generate, derive, convert, verify. Five key types, **zero dependencies** |
+| [`@privatekey/core`](https://github.com/getprivatekey/packages/tree/main/core) | the ports — `IKeyStore` and `ISigner`. Types only: zero runtime, zero dependencies |
+| [`@privatekey/keystore-node`](https://github.com/getprivatekey/packages/tree/main/keystore-node) | a keystore on `node:fs` — one file per key, `0600`, a `0700` directory when the store makes it |
+| [`@privatekey/keystore-hsfs`](https://github.com/getprivatekey/packages/tree/main/keystore-hsfs) | a keystore over any `IFileSystem` — the same file, behind [High Security File System](https://github.com/high-security) |
 | `privatekey` | the name, and the front door. The product is `@privatekey/*` |
 
 ## What this is not
