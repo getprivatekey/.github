@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/privatekey.png" alt="PrivateKey" width="320">
+  <img src="assets/privatekey.png" alt="PrivateKey" width="580">
 </p>
 
 <h1 align="center">PrivateKey</h1>
