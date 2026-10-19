@@ -45,10 +45,9 @@ material.
 
 ## The solution
 
-PrivateKey is not a framework. It is a framing of a question — *What is security?* — an open
-conversation and a thought process, not a blueprint and not a black box. We do not ship security
-as a fact; we offer a process of interrogating each layer, of building awareness. Security is
-the result of a conscious choice, not a pre-processed result. 
+PrivateKey is not a framework. It is a framing of a question — *What is your security model?* — it's a design process, not a blueprint and not a black box. We do not ship security
+as a fact or a product; we offer a process of interrogating each tier, of building awareness and compounded security architecture. Security is
+the result of a conscious choice, not a package, not a pre-processed result. 
 
 We do not hand you answers, and we do not sell you security as a promise. Only your own surface
 and attack vectors can answer that. What we give you is a toolbox that makes security
@@ -59,6 +58,39 @@ faith.
 
 Your key, your rules, your responsibility. That is the PrivateKey principle: your policies lead
 the design, not tools that protect you from yourself by limiting your choices.
+
+## Embedded security, tiered security
+
+There are two answers to *is it secure?*, and they are not variations of each other.
+
+One points **inside the box**. The framework owns storage, signing, policy and transport, so
+everything in it is trusted because it is in it. That is the agent model — Veramo being its
+best-known implementation — and it is a reasonable answer until you ask where the boundary is.
+The boundary is the process. Every plugin widens what must be trusted, and the security review
+becomes the framework, plus its plugin graph, plus every adapter it loads.
+
+The other points **at the seams**. Each tier states what it knows — the filesystem knows a
+location, the signer knows a key, the policy knows who may use it — and the contract between
+them is the entire review surface. Two short interfaces, and a line you can point at.
+
+| | embedded | tiered |
+|---|---|---|
+| trust boundary | the process | the port |
+| review surface | the framework, its plugins, its adapters | two interfaces |
+| adding a capability | widens what must be trusted | narrows what each tier may do |
+| the strongest option | a plugin slot, if the framework has one | the same one-method port as the weakest |
+| blast radius of one bad dependency | everything | the tier it lives in |
+
+Tiering is not better by default, and the difference is not stylistic. A port with forty methods
+is a framework wearing a port's clothes — the seam has to be narrow enough to read in one
+sitting, or the architecture buys nothing. Tiers also cost the integration work a framework
+does for you.
+
+What tiering buys is the one thing that cannot be retrofitted: **a place to say no.** A
+framework that handles it for you has no point at which refusal is a first-class outcome. A
+boundary does — and the refusal is the record.
+
+> **A framework's security is a claim about its inside. An architecture's is a claim about its seams.**
 
 ## What we've built
 
